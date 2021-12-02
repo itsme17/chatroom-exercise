@@ -17,5 +17,13 @@ io.on('connection', (socket) => {
     console.log(counter+' someone connected');
     if ('connection'){
         counter++;
-    }});
+    }
+    socket.on('sendToAll', (message) =>{
+        io.emit("displayMessage", (message));
+    });
+
+    socket.on('sendToMe', (message) =>{
+        socket.emit("displayMessage", (message));
+    });
+});
 
