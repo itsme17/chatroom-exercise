@@ -1,10 +1,15 @@
 let socket = io.connect();
 /*client*/
+var username = prompt("give username : ");
 document.getElementById('sendToAll').addEventListener("click", function () {
-    socket.emit('sendToAll', document.getElementById('msg').value);
+    let data = {
+        name : username,
+        msg :  document.getElementById('msg').value
+    }
+    socket.emit('sendToAll',data);
 })
 socket.on('displayMessage', (message) => {
-    target.innerHTML += '<br>'+message;
+    target.innerHTML += '<br>'+message.name+" : "+message.msg;
 });
 
 //msg to yourself
