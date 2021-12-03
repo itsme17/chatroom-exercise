@@ -14,5 +14,9 @@ socket.on('displayMessage', (message) => {
 
 //msg to yourself
 document.getElementById('sendToMe').addEventListener("click", function () {
-    socket.emit('sendToMe', document.getElementById('msg').value);
+    let data = {
+        name : username,
+        msg :  document.getElementById('msg').value
+    }
+    socket.emit('sendToMe', data);
 })

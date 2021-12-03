@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <title>chatroom</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<div id="target"></div>
 <div class="chatBox">
-message: <br>
-<input id="msg" type="text">
-<button id="sendToAll" type="button"> Send To All</button>
-<button id="sendToMe" type="button"> Send To Me </button>
+<div id="target"></div>
+    <br>
+    <form >
+    <div class="formgroup">
+        <input id="msg" type="text">
+    </div>
+        <br>
+<button id="sendToAll" type="button" class="btn-primary"> Send To All</button>
+<button id="sendToMe" class="btn-primary" type="button"> Send To Me </button>
+    </form>
 </div>
+
+
 <script src="/socket.io/socket.io.js"></script>
 <script src="chatroom.js"></script>
 </body>
